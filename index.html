@@ -212,6 +212,55 @@
         </div>
     </div>
 
+    <!-- 
+    1. chmod 400 static-web-app_key.pem
+    2. ssh -i static-web-app_key.pem azureuser@135.235.136.115
+    THEN-
+    sudo apt update
+sudo apt upgrade -y
+
+sudo apt install nginx -y
+
+Go to nginx web folder:
+cd /var/www/html
+
+Remove default nginx page:
+sudo rm -f index.nginx-debian.html
+
+
+Create main website file:
+sudo nano index.html
+
+Write your HTML code inside this file.
+
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <h1>Website Hosted Successfully</h1>
+</body>
+</html>
+
+
+Run file permission:
+sudo chmod -R 755 /var/www/html
+
+Restart nginx:
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl status nginx
+    
+
+Open browser:
+http://YOUR_VM_IP
+
+    -->
+
     <!-- Services -->
     <section id="services">
         <div class="section-title">
